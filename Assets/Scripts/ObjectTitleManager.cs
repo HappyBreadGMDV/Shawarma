@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization; // опционально, IsEmpty уже доступен
 
 public class ObjectTitleManager : MonoBehaviour
 {
@@ -17,20 +18,17 @@ public class ObjectTitleManager : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, rayDistance))
         {
-            var objectTitle = hit.collider.GetComponent<Interaction>();
+            var interaction = hit.collider.GetComponent<Interaction>();
 
-            // Проверяем, что компонент найден и его локализация настроена
-            if (objectTitle != null && objectTitle.Name != null && objectTitle.Description != null)
+            // Проверяем, что компонент есть и оба локализованных поля заполнены
+            if (interaction != null && !interaction.Name.IsEmpty && !interaction.Description.IsEmpty)
             {
-                // Сначала получаем чистый string через .GetLocalizedString(), 
-                // и только потом заменяем символы переноса строки
-                string nameText = objectTitle.Name.GetLocalizedString().Replace("\\n", "\n");
-                string descText = objectTitle.Description.GetLocalizedString().Replace("\\n", "\n");
+                string nameText = interaction.Name.GetLocalizedString().Replace("\\n", "\n");
+                string descText = interaction.Description.GetLocalizedString().Replace("\\n", "\n");
 
                 TextName.text = nameText;
                 TextDescription.text = descText;
 
-                // Принудительно обновляем меш (на всякий случай)
                 TextName.ForceMeshUpdate();
                 TextDescription.ForceMeshUpdate();
             }

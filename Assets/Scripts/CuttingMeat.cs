@@ -6,6 +6,7 @@ public class CuttingMeat : Interaction
 {
     public CinemachineVirtualCamera virtualCamera;
     public FirstPersonController firstPersonController;
+    public PauseMenu pauseMenu;
 
     [Header("Cutting Settings")]
     public Transform MeetTransform;
@@ -50,6 +51,8 @@ public class CuttingMeat : Interaction
         virtualCamera.Priority = 20;
         virtualCamera.Follow = Look;
         virtualCamera.LookAt = transform;
+
+        pauseMenu.enabled = false;
 
         isCutting = true;
 
@@ -97,5 +100,9 @@ public class CuttingMeat : Interaction
         // ¬озвращаем исходный переведенный текст
         Name = oldName;
         Description = oldDescription;
+        Name.SetReference(oldName.TableReference, oldName.TableEntryReference);
+        Description.SetReference(oldDescription.TableReference, oldDescription.TableEntryReference);
+        pauseMenu.enabled = false;
+        pauseMenu.Resume();
     }
 }

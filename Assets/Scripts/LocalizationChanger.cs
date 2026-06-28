@@ -87,7 +87,14 @@ public class Localizate : MonoBehaviour
         var locale = LocalizationSettings.SelectedLocale;
         if (locale != null)
         {
-            ButtonText.text = locale.Identifier.Code.ToUpper();
+            if(locale.Identifier.Code == "ru-RU")
+            {
+                ButtonText.text = "RU".ToUpper();
+            }
+            else
+            {
+                ButtonText.text = locale.Identifier.Code.ToUpper();
+            }
         }
     }
 }
