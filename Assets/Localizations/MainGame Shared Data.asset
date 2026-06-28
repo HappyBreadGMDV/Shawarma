@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: MainGame Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: MainGame
+  m_TableCollectionNameGuidString: d2adf04b9c165b84c88d0749f6592718
+  m_Entries:
+  - m_Id: 16793972736
+    m_Key: LavashSpawnText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1765390921728
+    m_Key: LavashDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4533556064256
+    m_Key: Lavash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8796411768832
+    m_Key: Tomato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9157872693248
+    m_Key: TomatoDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10276065751040
+    m_Key: Cucumber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10576105287680
+    m_Key: CucumberDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11584625684480
+    m_Key: Meat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12175150133248
+    m_Key: MeatDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13183288848384
+    m_Key: SauceSpoon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13344220098560
+    m_Key: SauceSpoonDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14626108452864
+    m_Key: SauceDish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14719939227648
+    m_Key: SauceDishDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24732980195328
+    m_Key: CucumberContainer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24852559802368
+    m_Key: CucumberContainerDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25349823901696
+    m_Key: TomatoContainer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25678518923264
+    m_Key: TomatoContainerDescription
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26583570034688
+    m_Key: "\u0421ustomer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26708354772992
+    m_Key: "\u0421ustomerDescription"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32876410155008
+    m_Key: MeatRotisserie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403432841216
+    m_Key: 'MeatRotisserieDescription
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 34644670001152
+    m_Key: 'Meat
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35258183430144
+    m_Key: 'MeatDescription
+
+'
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3578456873080193079
+  references:
+    version: 2
+    RefIds:
+    - rid: 3578456873080193079
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1782563295996

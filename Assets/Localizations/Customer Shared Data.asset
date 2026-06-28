@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Customer Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Customer
+  m_TableCollectionNameGuidString: 5b8221476a843514d8676da726b28bb6
+  m_Entries:
+  - m_Id: 197870465024
+    m_Key: StartMessage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 568869236736
+    m_Key: RepeatMessage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1244617748480
+    m_Key: Perfect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1565326815232
+    m_Key: Unhappy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3316163522560
+    m_Key: Meat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3631256416256
+    m_Key: tomato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3893601742848
+    m_Key: sauce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4651705413632
+    m_Key: cucumber
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3578456873080193105
+  references:
+    version: 2
+    RefIds:
+    - rid: 3578456873080193105
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1782572967014

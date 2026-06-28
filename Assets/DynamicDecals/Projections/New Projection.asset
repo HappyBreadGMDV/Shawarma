@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcb8792a633d83f4f8f6885545aa7817, type: 3}
+  m_Name: New Projection
+  m_EditorClassIdentifier: 
+  type: 0
+  instanced: 0
+  forceForward: 0
+  priority: 0
+  transparencyType: 1
+  cutoff: 0.01
+  tiling: {x: 0, y: 0}
+  offset: {x: 0, y: 0}
+  maskMethod: 0
+  masks: 00000000
+  projectionLimit: 180
+  _Cutoff: 134
+  _TilingOffset: 1617
+  _MaskBase: 1615
+  _MaskLayers: 1616
+  albedo:
+    texture: {fileID: 2800000, guid: ef3fd76e5468de04e9a739dda1bdfbb0, type: 3}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    _MainTex: 15
+    _Color: 79

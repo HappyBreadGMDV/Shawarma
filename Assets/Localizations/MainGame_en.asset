@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: MainGame_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: d2adf04b9c165b84c88d0749f6592718, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 3578456873080193100
+  m_TableData:
+  - m_Id: 16793972736
+    m_Localized: Lavash spawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1765390921728
+    m_Localized: 'E - Take
+
+      F - Wrap'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4533556064256
+    m_Localized: Lavash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8796411768832
+    m_Localized: sliced tomato
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9157872693248
+    m_Localized: e - take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10276065751040
+    m_Localized: sliced cucumber
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10576105287680
+    m_Localized: e - take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11584625684480
+    m_Localized: sliced meat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12175150133248
+    m_Localized: e - take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13183288848384
+    m_Localized: Sauce ladle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13344220098560
+    m_Localized: e - take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14626108452864
+    m_Localized: sauce dish
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14719939227648
+    m_Localized: 'E - Take
+
+      Need a sauce ladle'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24732980195328
+    m_Localized: cucumber container
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24852559802368
+    m_Localized: e - take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25349823901696
+    m_Localized: tomato container
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25678518923264
+    m_Localized: e - take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26583570034688
+    m_Localized: "\u0441ustomer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26708354772992
+    m_Localized: E - Repeat order
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32876410155008
+    m_Localized: meat rotisserie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33403432841216
+    m_Localized: "E \u2014 Slice meat"
+    m_Metadata:
+      m_Items:
+      - rid: 3578456873080193100
+  - m_Id: 34644670001152
+    m_Localized: meat
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35258183430144
+    m_Localized: e - take
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 3578456873080193100
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00b0bf57611e0000
