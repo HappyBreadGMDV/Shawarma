@@ -1,16 +1,18 @@
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
 
 public class CuttingMeat : Interaction
 {
     public CinemachineVirtualCamera virtualCamera;
     public FirstPersonController firstPersonController;
     public PauseMenu pauseMenu;
+    public GameObject UiPodskazka;
 
     [Header("Cutting Settings")]
     public Transform MeetTransform;
-    public float MouseSpeedMaxCutting;
+    public float MouseSpeedMaxCutting = 100f;
     public float Meet;
     public float maxMeet = 1f;
 
@@ -21,27 +23,35 @@ public class CuttingMeat : Interaction
     private bool isCutting;
     private Vector3 lastMousePos;
 
-    // —юда сохран€ем переведенный текст
-    private LocalizedString oldName;
-    private LocalizedString oldDescription;
+    // ’раним точные ссылки на таблицы и ключи, а не просто копии ссылок
+    private TableReference oldNameTable;
+    private TableEntryReference oldNameEntry;
+    private TableReference oldDescTable;
+    private TableEntryReference oldDescEntry;
 
     private void Start()
     {
         lastMousePos = Input.mousePosition;
 
-        // Ѕерем готовый перевод из базовых свойств родител€ Interaction
-        oldName = Name;
-        oldDescription = Description;
-
-        // »нициализируем текущие строки текста
-        Name = oldName;
-        Description = oldDescription;
+        // —охран€ем текущие значени€ локализации
+        if (Name != null)
+        {
+            oldNameTable = Name.TableReference;
+            oldNameEntry = Name.TableEntryReference;
+        }
+        if (Description != null)
+        {
+            oldDescTable = Description.TableReference;
+            oldDescEntry = Description.TableEntryReference;
+        }
     }
 
     public override void Click()
     {
         if (Camera.main)
             virtualCamera.transform.position = Camera.main.transform.position;
+
+        UiPodskazka.SetActive(true);
 
         firstPersonController.playerCanMove = false;
         firstPersonController.cameraCanMove = false;
@@ -56,9 +66,9 @@ public class CuttingMeat : Interaction
 
         isCutting = true;
 
-        // “еперь это обычные строки, они спокойно очищаютс€
-        Name.SetReference("", "");
-        Description.SetReference("", "");
+        // ќчищаем им€ и описание (показываем пустые строки)
+        Name = new LocalizedString();
+        Description = new LocalizedString();
     }
 
     private void Update()
@@ -68,6 +78,7 @@ public class CuttingMeat : Interaction
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ExitCuttingMode();
+            UiPodskazka.SetActive(false);
             return;
         }
 
@@ -97,12 +108,11 @@ public class CuttingMeat : Interaction
 
         isCutting = false;
 
-        // ¬озвращаем исходный переведенный текст
-        Name = oldName;
-        Description = oldDescription;
-        Name.SetReference(oldName.TableReference, oldName.TableEntryReference);
-        Description.SetReference(oldDescription.TableReference, oldDescription.TableEntryReference);
-        pauseMenu.enabled = false;
-        pauseMenu.Resume();
+        // ¬осстанавливаем оригинальные локализованные строки
+        Name = new LocalizedString(oldNameTable, oldNameEntry);
+        Description = new LocalizedString(oldDescTable, oldDescEntry);
+
+        pauseMenu.enabled = true;       // включаем обратно меню паузы
+        pauseMenu.Resume();             // снимаем паузу (если она была)
     }
 }

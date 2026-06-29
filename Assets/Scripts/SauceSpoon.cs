@@ -5,6 +5,7 @@ public class SauceSpoon : MonoBehaviour
     public KeyCode GrabSauseKey;
     public float rayDistance;
     public GameObject SauseModel;
+    public GameObject UiPodskazka;
     public string SauseTag;
     public string ShawaTag;
 
@@ -19,12 +20,19 @@ public class SauceSpoon : MonoBehaviour
 
     void Update()
     {
+        // Если ложка не прикреплена к руке – выключаем подсказку и ничего не делаем
+        if (transform.parent != StaticGrab)
+        {
+            UiPodskazka.SetActive(false);
+            return;
+        }
+
+        // Ложка в руке – показываем подсказку
+        UiPodskazka.SetActive(true);
+
+        // Обработка нажатия клавиши
         if (Input.GetKeyDown(GrabSauseKey))
         {
-            // Ложка должна быть прикреплена к руке
-            if (transform.parent != StaticGrab)
-                return;
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
@@ -37,7 +45,13 @@ public class SauceSpoon : MonoBehaviour
                 }
                 else if (hit.collider.CompareTag(ShawaTag) && SauseModel != null && SauseModel.activeSelf)
                 {
-                    hit.collider.GetComponent<ShwarmaCooking>().AddIngredient(this.gameObject);
+                    // Добавляем ингредиент в шаурму
+                    ShwarmaCooking shwarma = hit.collider.GetComponent<ShwarmaCooking>();
+                    if (shwarma != null)
+                        shwarma.AddIngredient(this.gameObject);
+                    else
+                        Debug.LogWarning("На объекте шаурмы нет компонента ShwarmaCooking!");
+
                     SauseModel.SetActive(false);
                 }
             }

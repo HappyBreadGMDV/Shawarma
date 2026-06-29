@@ -116,6 +116,16 @@ MonoBehaviour:
     m_Localized: e - take
     m_Metadata:
       m_Items: []
+  - m_Id: 664095229456384
+    m_Localized: q-drop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 664513011494912
+    m_Localized: 'esc-quit
+
+      fast mouse movement-slice meat'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
