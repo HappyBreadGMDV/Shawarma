@@ -254,6 +254,8 @@ using UnityEngine;
 
 public class GrabManager : MonoBehaviour
 {
+    public AudioClip GrabAudio;
+    public AudioSource GrabAudioSourse;
     [Header("Raycast")]
     public float rayDistance = 3f;
     public LayerMask grabLayer;
@@ -296,6 +298,7 @@ public class GrabManager : MonoBehaviour
             {
                 GrabSpecificObject(target);
                 isGrabbed = true;
+                GrabAudioSourse.PlayOneShot(GrabAudio);
             }
         }
 
@@ -306,6 +309,7 @@ public class GrabManager : MonoBehaviour
             {
                 GrabSpecificObject(target);
                 isGrabbed = true;
+                GrabAudioSourse.PlayOneShot(GrabAudio);
             }
         }
 

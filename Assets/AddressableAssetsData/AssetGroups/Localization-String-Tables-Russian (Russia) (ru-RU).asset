@@ -38,6 +38,13 @@ MonoBehaviour:
     - Locale-ru-RU
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6e66c84bc0e713a4fa23b908b36e4dd0
+    m_Address: Tutorial_ru-RU
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru-RU
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: b174a77bc3cbef84ab96964a506e2e40, type: 2}
   m_SchemaSet:

@@ -10,12 +10,20 @@ public class InteractionManager : MonoBehaviour
     public KeyCode fKey = KeyCode.F;
     private bool isCliked;
 
+    private Camera mainCamera;
+
+    private void Start()
+    {
+        mainCamera = Camera.main;
+        if (mainCamera == null)
+            Debug.LogError("Main Camera не найдена!");
+    }
 
     void Update()
     {
         if (Input.GetKey(interactionKey))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
 

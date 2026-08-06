@@ -336,7 +336,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -974,7 +974,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -1197,7 +1197,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -1319,6 +1319,7 @@ GameObject:
   - component: {fileID: 4347050502272412966}
   - component: {fileID: 8500025943389337676}
   - component: {fileID: 6573387263844733695}
+  - component: {fileID: 7579953540043363237}
   m_Layer: 0
   m_Name: Drone
   m_TagString: Untagged
@@ -1426,7 +1427,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 82b4b35676074a941afa38b51f48c479, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -1545,6 +1546,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+--- !u!114 &7579953540043363237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5489211107366592104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f010773c86cc62c439c39b62b054c945, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoxScript: {fileID: 5729891228020102195}
+  playableDirector: {fileID: 8500025943389337676}
 --- !u!1 &5602993730986740588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,7 +1943,7 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_RenderingLayerMask: 1
   m_Lightmapping: 4
   m_LightShadowCasterMode: 0
@@ -2279,15 +2294,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8337e0449134f9240a80fd21bf46c929, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8337e0449134f9240a80fd21bf46c929, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.87
+      value: -1.888
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8337e0449134f9240a80fd21bf46c929, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8337e0449134f9240a80fd21bf46c929, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2335,6 +2350,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8337e0449134f9240a80fd21bf46c929, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2587819644681100545}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8337e0449134f9240a80fd21bf46c929, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5729891228020102195}
   m_SourcePrefab: {fileID: 100100000, guid: 8337e0449134f9240a80fd21bf46c929, type: 3}
 --- !u!1 &8230916457916193754 stripped
 GameObject:
@@ -2389,6 +2407,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0036576, y: 0.0036576001, z: 0.0036575997}
   m_Center: {x: -0.00000005977927, y: -2.3283067e-10, z: 0.000000007450581}
+--- !u!114 &5729891228020102195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8230916457916193754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d8296094cf6e824d9629974d2a1c82c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objects:
+  - {fileID: 3600793622429737375, guid: 646c9d19befe15e469d0569c5c82696a, type: 3}
+  - {fileID: 3600793622429737375, guid: 78f0a86335ff1f94aae537004763bfa9, type: 3}
 --- !u!4 &8750993547805753696 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8337e0449134f9240a80fd21bf46c929, type: 3}

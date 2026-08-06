@@ -893,6 +893,18 @@ public class FirstPersonController : MonoBehaviour
 
     #endregion
 
+    public void Stop()
+    {
+        playerCanMove = false;
+        cameraCanMove = false;
+        Cursor.lockState = CursorLockMode.None;
+    }
+    public void Starts()
+    {
+        playerCanMove = true;
+        cameraCanMove = true;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     private void Awake()
     {
         noiseComponent = virtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();

@@ -109,7 +109,7 @@ MonoBehaviour:
       m_Items:
       - rid: 3578456873080193100
   - m_Id: 34644670001152
-    m_Localized: meat
+    m_Localized: Meat
     m_Metadata:
       m_Items: []
   - m_Id: 35258183430144
@@ -124,6 +124,54 @@ MonoBehaviour:
     m_Localized: 'esc-quit
 
       fast mouse movement-slice meat'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8282676272279552
+    m_Localized: 'E - take
+
+      F - Open/Close'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8282651664297984
+    m_Localized: cucumber box
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8284849047580672
+    m_Localized: sliced cucumbers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8284992887042048
+    m_Localized: E - take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8289365977444352
+    m_Localized: sliced tomatoes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8289404200136704
+    m_Localized: E - take
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8289810779189248
+    m_Localized: tomato box
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8395668984934400
+    m_Localized: lavash box
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8397049204551680
+    m_Localized: Lavashes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8400476584259584
+    m_Localized: 'Laptop
+
+      (shop)'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8401467220144128
+    m_Localized: e - open
     m_Metadata:
       m_Items: []
   references:

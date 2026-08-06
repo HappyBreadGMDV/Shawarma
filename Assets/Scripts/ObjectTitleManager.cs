@@ -1,36 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Localization; // опционально, IsEmpty уже доступен
 
 public class ObjectTitleManager : MonoBehaviour
 {
     public TextMeshProUGUI TextName;
     public TextMeshProUGUI TextDescription;
+    public float rayDistance = 5f;
 
-    public float rayDistance;
+    private Camera mainCamera;
 
-    private void FixedUpdate()
+    private void Start()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        mainCamera = Camera.main;
+        if (mainCamera == null)
+            Debug.LogError("Main Camera не найдена!");
+    }
+
+    private void Update()
+    {
+        if (mainCamera == null) return;
+
+        // Луч из камеры через позицию мыши
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, rayDistance))
         {
             var interaction = hit.collider.GetComponent<Interaction>();
 
-            // Проверяем, что компонент есть и оба локализованных поля заполнены
             if (interaction != null && !interaction.Name.IsEmpty && !interaction.Description.IsEmpty)
             {
-                string nameText = interaction.Name.GetLocalizedString().Replace("\\n", "\n");
-                string descText = interaction.Description.GetLocalizedString().Replace("\\n", "\n");
-
-                TextName.text = nameText;
-                TextDescription.text = descText;
-
-                TextName.ForceMeshUpdate();
-                TextDescription.ForceMeshUpdate();
+                TextName.text = interaction.Name.GetLocalizedString().Replace("\\n", "\n");
+                TextDescription.text = interaction.Description.GetLocalizedString().Replace("\\n", "\n");
             }
             else
             {

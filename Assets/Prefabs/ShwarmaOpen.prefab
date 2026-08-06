@@ -341,7 +341,7 @@ MonoBehaviour:
             m_BoolArgument: 1
           m_CallState: 2
     used: 0
-  - Object: {fileID: 0}
+  - Object: {fileID: 287305294049195646, guid: 1febbd9b5b62ece4389e3e37b8f7a2de, type: 3}
     DestroyObject: 0
     oneshot: 1
     NoCollider: 1

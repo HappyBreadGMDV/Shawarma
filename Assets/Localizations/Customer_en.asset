@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 197870465024
-    m_Localized: Hello, can I have a shawarma with
+    m_Localized: 'Hello, can I have a shawarma with '
     m_Metadata:
       m_Items: []
   - m_Id: 568869236736

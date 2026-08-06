@@ -69,7 +69,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false; // доп. гарантия скрытия курсора
+        //Cursor.visible = false; // доп. гарантия скрытия курсора
     }
 
     void Pause()
@@ -86,6 +86,6 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.visible = true;
     }
 }

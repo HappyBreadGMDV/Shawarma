@@ -14,6 +14,15 @@
       "dependencies": {},
       "hash": "613d1e8e553054cd5130b3c2b27da75a8b41ff33"
     },
+    "com.jimmycushnie.noisynodes": {
+      "version": "https://github.com/JimmyCushnie/Noisy-Nodes.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.shadergraph": "7.1.8"
+      },
+      "hash": "81a21b22fbefb4e983379aed3a4490e9c446c9fb"
+    },
     "com.olegknyazev.softmask": {
       "version": "https://github.com/olegknyazev/SoftMask.git?path=/Packages/com.olegknyazev.softmask#1.7.0",
       "depth": 0,
@@ -23,6 +32,13 @@
         "com.unity.modules.ui": "1.0.0"
       },
       "hash": "ba10acd1e94e89a5e7dc03140e46aa0c230902a9"
+    },
+    "com.rimurudev.unity-skip-splashscreen": {
+      "version": "https://github.com/RimuruDev/UnitySkipSplashScreen.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3cd6028bf0643266b53609a3d8be0a556c055736"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
@@ -41,6 +57,16 @@
         "com.unity.modules.unitywebrequest": "1.0.0",
         "com.unity.scriptablebuildpipeline": "1.21.5",
         "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.animation.rigging": {
+      "version": "1.2.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.4.1",
+        "com.unity.test-framework": "1.1.24"
       },
       "url": "https://packages.unity.com"
     },

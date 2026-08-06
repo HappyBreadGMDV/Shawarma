@@ -11,10 +11,13 @@ public class CuttingMeat : Interaction
     public GameObject UiPodskazka;
 
     [Header("Cutting Settings")]
+    public GameObject MeetParticle;
     public Transform MeetTransform;
+    public Transform MeetModelTransform;
     public float MouseSpeedMaxCutting = 100f;
     public float Meet;
     public float maxMeet = 1f;
+    public float rayDistance = 10f;                // дальность луча увеличена
 
     public Transform Look;
     public Transform MeetStartTransform;
@@ -23,7 +26,7 @@ public class CuttingMeat : Interaction
     private bool isCutting;
     private Vector3 lastMousePos;
 
-    // Храним точные ссылки на таблицы и ключи, а не просто копии ссылок
+    // Локализация
     private TableReference oldNameTable;
     private TableEntryReference oldNameEntry;
     private TableReference oldDescTable;
@@ -33,7 +36,6 @@ public class CuttingMeat : Interaction
     {
         lastMousePos = Input.mousePosition;
 
-        // Сохраняем текущие значения локализации
         if (Name != null)
         {
             oldNameTable = Name.TableReference;
@@ -62,11 +64,11 @@ public class CuttingMeat : Interaction
         virtualCamera.Follow = Look;
         virtualCamera.LookAt = transform;
 
-        pauseMenu.enabled = false;
+        if (pauseMenu != null)
+            pauseMenu.enabled = false;
 
         isCutting = true;
 
-        // Очищаем имя и описание (показываем пустые строки)
         Name = new LocalizedString();
         Description = new LocalizedString();
     }
@@ -89,6 +91,36 @@ public class CuttingMeat : Interaction
         if (mouseSpeed >= MouseSpeedMaxCutting)
         {
             Meet = Mathf.Clamp(Meet + 0.1f, 0f, maxMeet);
+
+            if (MeetParticle != null && MeetModelTransform != null)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
+                {
+                    // Проверяем, что корневой объект попавшего коллайдера совпадает с корнем модели мяса
+                    if (hit.collider.transform.root == MeetModelTransform.root)
+                    {
+                        GameObject pr = Instantiate(MeetParticle, hit.point, MeetParticle.transform.rotation);
+                        if (pr.TryGetComponent<ParticleSystem>(out var ps))
+                        {
+                            Destroy(pr, ps.main.duration);
+                            Debug.Log("Particle Spawned");
+                        }
+                        else
+                        {
+                            Destroy(pr, 2f);
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log($"Попадание в {hit.collider.name} (root: {hit.collider.transform.root.name}), ожидался root: {MeetModelTransform.root.name}");
+                    }
+                }
+                else
+                {
+                    Debug.Log("Луч не попал в объект");
+                }
+            }
         }
 
         float progress = Mathf.Clamp01(Meet / maxMeet);
@@ -108,11 +140,13 @@ public class CuttingMeat : Interaction
 
         isCutting = false;
 
-        // Восстанавливаем оригинальные локализованные строки
         Name = new LocalizedString(oldNameTable, oldNameEntry);
         Description = new LocalizedString(oldDescTable, oldDescEntry);
 
-        pauseMenu.enabled = true;       // включаем обратно меню паузы
-        pauseMenu.Resume();             // снимаем паузу (если она была)
+        if (pauseMenu != null)
+        {
+            pauseMenu.enabled = true;
+            pauseMenu.Resume();
+        }
     }
 }

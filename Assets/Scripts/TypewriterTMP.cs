@@ -21,7 +21,7 @@ public class TypewriterTMP : MonoBehaviour
     public UnityEvent onTypeFinished;
 
     private string fullText;
-    private Coroutine typingCoroutine;
+    public Coroutine typingCoroutine;
 
     private void Start()
     {

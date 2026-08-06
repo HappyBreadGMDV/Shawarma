@@ -9,6 +9,9 @@ TagManager:
   - Shwarma
   - Concrete
   - Tile
+  - StartSpine
+  - EndSpine
+  - SauseSpoonPodsk
   layers:
   - Default
   - TransparentFX

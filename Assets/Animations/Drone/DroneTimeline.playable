@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7185793044291624430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 0
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 5ae55ccfaf476a7429990b1b2017ed74, type: 2}
 --- !u!114 &-6291827074364772413
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -171,11 +187,11 @@ MonoBehaviour:
   m_Tracks:
   - {fileID: -228133484631665847}
   - {fileID: 1788492956934355927}
-  m_FixedDuration: 0
+  m_FixedDuration: 17.016666666666666
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
-  m_DurationMode: 0
+  m_DurationMode: 1
   m_MarkerTrack: {fileID: -6291827074364772413}
 --- !u!114 &1551923305192726339
 MonoBehaviour:
@@ -219,6 +235,8 @@ MonoBehaviour:
     - {fileID: 2373658301212316380}
     - {fileID: 1551923305192726339}
     - {fileID: 6587796519765126630}
+    - {fileID: -7185793044291624430}
+    - {fileID: 5920445050427024242}
 --- !u!114 &2373658301212316380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,6 +253,22 @@ MonoBehaviour:
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 1fcb6e2b4d506b541a1ef9b90de516b0, type: 2}
+--- !u!114 &5920445050427024242
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 17.016666666666666
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: 5ae55ccfaf476a7429990b1b2017ed74, type: 2}
 --- !u!114 &6587796519765126630
 MonoBehaviour:
   m_ObjectHideFlags: 1

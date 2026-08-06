@@ -1,4 +1,6 @@
+using System.Linq;
 using UnityEngine;
+using static ShwarmaCooking;
 
 public class SauceSpoon : MonoBehaviour
 {
@@ -13,6 +15,10 @@ public class SauceSpoon : MonoBehaviour
 
     private void Start()
     {
+        if(UiPodskazka == null)
+        {
+            UiPodskazka = FindInactiveGameObjectWithTag("SauseSpoonPodsk");
+        }
         StaticGrab = GameObject.FindGameObjectWithTag("GrabPosStatic")?.transform;
         if (StaticGrab == null)
             Debug.LogError("SauceSpoon: не найден объект с тегом GrabPosStatic!");
@@ -23,7 +29,8 @@ public class SauceSpoon : MonoBehaviour
         // Если ложка не прикреплена к руке – выключаем подсказку и ничего не делаем
         if (transform.parent != StaticGrab)
         {
-            UiPodskazka.SetActive(false);
+            if (UiPodskazka != null) ;
+                UiPodskazka.SetActive(false);
             return;
         }
 
@@ -37,9 +44,16 @@ public class SauceSpoon : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, rayDistance))
             {
-                if (hit.collider.CompareTag(SauseTag))
+                if (hit.collider.CompareTag(SauseTag) && SauseModel.active == false)
                 {
                     Debug.Log("Sause");
+                    var sauseContainer = hit.collider.GetComponent<SauseContainer>();
+
+                    if (sauseContainer.Souse < sauseContainer.GrabSubstract)
+                        return;
+
+                    sauseContainer.UpdateSousePosition();
+
                     if (SauseModel != null)
                         SauseModel.SetActive(true);
                 }
@@ -56,6 +70,17 @@ public class SauceSpoon : MonoBehaviour
                 }
             }
         }
+    }
+
+    public static GameObject FindInactiveGameObjectWithTag(string tag)
+    {
+        // Retrieves all GameObjects including prefabs and inactive ones
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+
+        return allObjects.FirstOrDefault(go =>
+            go.hideFlags == HideFlags.None && // Excludes internal Unity editor objects
+            //!UnityEditor.AssetDatabase.Contains(go) && // Excludes project prefabs (Editor only)
+            go.CompareTag(tag));
     }
 
     private void OnDrawGizmosSelected()
