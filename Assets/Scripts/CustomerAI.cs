@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Tables;
 using UnityEngine.Playables;
 
 public class CustomerAI : Interaction
@@ -52,6 +53,26 @@ public class CustomerAI : Interaction
     public List<ShawarmaIngredients> AiShawarmaIngredients = new List<ShawarmaIngredients>();
 
     private Coroutine serveCoroutine;
+
+    private TableReference oldNameTable;
+    private TableEntryReference oldNameEntry;
+    private TableReference oldDescTable;
+    private TableEntryReference oldDescEntry;
+
+    private void Start()
+    {
+        if (Name != null)
+        {
+            oldNameTable = Name.TableReference;
+            oldNameEntry = Name.TableEntryReference;
+        }
+        if (Description != null)
+        {
+            oldDescTable = Description.TableReference;
+            oldDescEntry = Description.TableEntryReference;
+        }
+        AIRestart();
+    }
 
     public void Delete()
     {
@@ -136,6 +157,9 @@ public class CustomerAI : Interaction
 
     private void DisplayOrder(string prefix)
     {
+        Name = new LocalizedString(oldNameTable, oldNameEntry);
+        Description = new LocalizedString(oldDescTable, oldDescEntry);
+
         if (AiShawarmaIngredients.Count == 0) return;
 
         string text = prefix;
@@ -150,11 +174,6 @@ public class CustomerAI : Interaction
         OrderTextPanel.SetActive(true);
         OrderText.text = text;
         typewriter.StartTyping(text);
-    }
-
-    private void Start()
-    {
-        AIRestart();
     }
 
     private void OnTriggerEnter(Collider other) => Check(other);
@@ -237,6 +256,9 @@ public class CustomerAI : Interaction
         typewriter.StartTyping(perfect);
 
         MoneyManagerScript?.AddMoney(Salary);
+        
+        Name = new LocalizedString();
+        Description = new LocalizedString();
 
         if (ExitAnim != null)
         {
@@ -266,6 +288,9 @@ public class CustomerAI : Interaction
         typewriter.StartTyping(message);
 
         MoneyManagerScript?.AddMoney(-Fine);
+        
+        Name = new LocalizedString();
+        Description = new LocalizedString();
 
         if (ExitAnim != null)
         {
